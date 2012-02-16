@@ -5,6 +5,8 @@
   "dependencies": {
     "locomotive": ">= 0.1.0",
     "express": ">= 2.4.7",
-    "jade": ">= 0.20.1"
+    "jade": ">= 0.20.1",
+    "passport": ">= 0.1.6",
+    "passport-local": ">= 0.1.0"
   }
 }
