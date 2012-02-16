@@ -1,11 +1,12 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
+var Email = mongoose.SchemaTypes.Email;
 
 var bcrypt = require('bcrypt');
 
 var AccountSchema = new Schema({
   // eMail address
-  email: { type: String, unique: true },
+  email: { type: Email, unique: true },
 
   // Password
   salt: String,
