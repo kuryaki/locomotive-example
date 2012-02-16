@@ -7,6 +7,9 @@
     "express": ">= 2.4.7",
     "jade": ">= 0.20.1",
     "passport": ">= 0.1.6",
-    "passport-local": ">= 0.1.0"
+    "passport-local": ">= 0.1.0",
+    "mongoose": ">= 2.5.7",
+    "locomotive-mongoose": ">= 0.1.0",
+    "bcrypt": ">= 0.5.0"
   }
 }
