@@ -16,13 +16,11 @@ AccountController.loginForm = function() {
   this.render();
 };
 
-AccountController.login = function() {
-  var homePath = this.urlFor({ action: 'show' });
-  var loginPath = this.urlFor({ action: 'login' });
 
+AccountController.login = function() {
   passport.authenticate('local', {
-    successRedirect: homePath,
-    failureRedirect: loginPath }
+    successRedirect: this.urlFor({ action: 'show' }),
+    failureRedirect: this.urlFor({ action: 'login' }) }
   )(this.__req, this.__res, this.__next);
 };
 
