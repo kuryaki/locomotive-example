@@ -5,5 +5,11 @@ form(action=accountURL(), method='POST')
   .control-group
     label(for='password') Password
     input(type='password', name='password')
+  .control-group
+    label(for='name.first') First Name
+    input(type='text', name='name.first')
+  .control-group
+    label(for='name.last') Last Name
+    input(type='text', name='name.last')
   .form-actions
     button.btn.btn-primary(type='submit') Register

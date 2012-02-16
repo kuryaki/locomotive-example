@@ -27,6 +27,8 @@ AccountController.create = function() {
 
   account.email = this.param('email');
   account.password = this.param('password');
+  account.name.first = this.param('name.first');
+  account.name.last = this.param('name.last');
 
   var self = this;
   account.save(function (err) {
