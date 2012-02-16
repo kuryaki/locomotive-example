@@ -26,7 +26,7 @@ AccountController.login = function() {
 
 AccountController.logout = function() {
   this.req.logout();
-  this.res.redirect('/');
+  this.redirect('/');
 };
 
 module.exports = AccountController;
