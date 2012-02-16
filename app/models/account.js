@@ -9,8 +9,8 @@ var AccountSchema = new Schema({
   email: { type: Email, unique: true },
 
   // Password
-  salt: String,
-  hash: String
+  salt: { type: String, required: true },
+  hash: { type: String, required: true },
 });
 
 AccountSchema.virtual('password').get(function () {
