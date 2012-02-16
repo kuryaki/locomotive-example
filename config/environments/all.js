@@ -7,4 +7,4 @@ module.exports = function() {
   this.use(express.bodyParser());
   this.use(this.router);
   this.use(express.static(__dirname + '/../../public'));
-}
+};
