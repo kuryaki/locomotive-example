@@ -2,6 +2,8 @@ var locomotive = require('locomotive');
 var passport = require('passport');
 var Controller = locomotive.Controller;
 
+var Account = require('../models/account');
+
 var AccountController = new Controller();
 
 AccountController.show = function() {
@@ -12,10 +14,28 @@ AccountController.show = function() {
   this.render();
 };
 
+AccountController.new = function() {
+  this.render();
+};
+
 AccountController.loginForm = function() {
   this.render();
 };
 
+AccountController.create = function() {
+  var account = new Account();
+
+  account.email = this.param('email');
+  account.password = this.param('password');
+
+  var self = this;
+  account.save(function (err) {
+    if (err)
+      return self.redirect(self.urlFor({ action: 'new' }));
+
+    return self.redirect(self.urlFor({ action: 'login' }));
+  });
+};
 
 AccountController.login = function() {
   passport.authenticate('local', {
