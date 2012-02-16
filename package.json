@@ -1,0 +1,10 @@
+{
+  "name": "app-name",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "locomotive": ">= 0.1.0",
+    "express": ">= 2.4.7",
+    "ejs": ">= 0.4.3"
+  }
+}
