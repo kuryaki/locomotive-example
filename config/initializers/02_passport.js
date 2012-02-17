@@ -11,22 +11,8 @@ passport.use(new LocalStrategy({
     // Find the user by username.  If there is no user with the given
     // username, or the password is not correct, set the user to `false` to
     // indicate failure.  Otherwise, return the authenticated `user`.
-    Account.findOne({ email: email }, function(err, user) {
-      if (err)
-        return done(err);
-
-      if (!user)
-        return done(null, false);
-
-      user.checkPassword(password, function(err, passwordCorrect) {
-        if (err)
-          return done(err);
-
-        if (!passwordCorrect)
-          return done(null, false);
-
-        return done(null, user);
-      })
+    Account.authenticate(email, password, function(err, user) {
+      return done(err, user);
     });
   }
 ));
