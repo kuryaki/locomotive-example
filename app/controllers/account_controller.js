@@ -24,6 +24,7 @@ AccountController.loginForm = function() {
 
 AccountController.create = function() {
   var account = new Account();
+  console.log("shit");
 
   account.email = this.param('email');
   account.password = this.param('password');

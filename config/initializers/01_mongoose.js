@@ -1,5 +1,8 @@
-var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/skylines');
+module.exports = function(){
 
-var mongooseTypes = require("mongoose-types");
-mongooseTypes.loadTypes(mongoose);
+	this.mongoose = require('mongoose');
+	this.mongoose.connect(this.set('db-uri'));
+	this.mongooseTypes = require("mongoose-types");
+	this.mongooseTypes.loadTypes(this.mongoose);
+};
+
