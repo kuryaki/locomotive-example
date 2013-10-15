@@ -4,6 +4,7 @@ var passport = require('passport');
 module.exports = function() {
   this.set('views', __dirname + '/../../app/views');
   this.set('view engine', 'jade');
+  this.engine('jade', require('jade').__express);
 
   this.use(express.logger({ format: '\x1b[1m:method\x1b[0m \x1b[33m:url\x1b[0m :response-time ms' }));
   this.use(express.cookieParser());
